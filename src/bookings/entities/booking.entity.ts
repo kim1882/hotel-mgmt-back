@@ -11,7 +11,7 @@ export class Booking {
   @Column({ type: 'text' })
   guest_name: string;
 
-  @Column({ type: 'timestamptz' })
+  @Column({ type: 'timestamptz', nullable: true })
   checkin: Date;
 
   @Column({ type: 'timestamptz', nullable: true })

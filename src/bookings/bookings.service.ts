@@ -16,7 +16,6 @@ export class BookingsService {
     const booking: Booking = new Booking();
     booking.room_id = createBookingDto.room_id;
     booking.guest_name = createBookingDto.guest_name;
-    booking.checkin = createBookingDto.checkin;
     return this.bookingRepository.save(booking);
   }
 
