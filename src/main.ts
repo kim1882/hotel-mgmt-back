@@ -10,9 +10,9 @@ async function bootstrap() {
     .setTitle('Hotel Management API')
     .setDescription('CRUD operations to manage room types, rooms and bookings')
     .setVersion('1.0')
-    .addTag('room types')
-    .addTag('rooms')
-    .addTag('bookings')
+    .addTag('Room Types')
+    .addTag('Rooms')
+    .addTag('Bookings')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

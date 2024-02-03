@@ -1,8 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { RoomTypesService } from './room_types.service';
 import { CreateRoomTypeDto } from './dto/create-room_type.dto';
 import { UpdateRoomTypeDto } from './dto/update-room_type.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Room Types')
 @Controller('room-types')
 export class RoomTypesController {
   constructor(private readonly roomTypesService: RoomTypesService) {}
@@ -23,7 +33,10 @@ export class RoomTypesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateRoomTypeDto: UpdateRoomTypeDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateRoomTypeDto: UpdateRoomTypeDto,
+  ) {
     return this.roomTypesService.update(+id, updateRoomTypeDto);
   }
 
